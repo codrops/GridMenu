@@ -2,7 +2,7 @@
 
 A CSS Grid powered menu with a box look inspired by the effect seen in the [Ableton Live 10: What's New](https://www.youtube.com/watch?v=Z9Ku5ptjzKw) video.
 
-![Grid Menu](https://tympanus.net/codrops/wp-content/uploads/2018/03/GridMenu_featured.jp)
+![Grid Menu](https://tympanus.net/codrops/wp-content/uploads/2018/03/GridMenu_featured.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=34419)
 
