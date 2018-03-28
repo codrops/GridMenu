@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700');
+
+.demo-1 {
+	font-family: 'Josefin Sans', sans-serif;
+    --color-text: #fff;
+    --color-bg: #101010;
+    --color-link: #f8d05d;
+    --color-link-hover: #949494;
+    --color-info: #f0f0f0;
+}
+
+.content__title {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.content__date {
+	font-size: 1rem;
+	padding: 1rem 0;
+}
+
+.content__location {
+	font-size: 1rem;
+}
+
+.content__text {
+	max-width: 600px;
+	font-size: 1.25rem;
+	line-height: 1.4;
+	text-align: center;
+}
+
+#content-2 {
+	background-color: #383f4b;
+}
+
+#content-3 {
+	background-color: #3d384b;
+}
+
+#content-4 {
+	background-color: #4b384a;
+}
+
+#content-5 {
+	background-color: #394b38;
+}
+
+#content-6 {
+	background-color: #4b4238;
+}
+
+.menu-trigger {
+	display: none;
+}
+
+.grim {
+	display: none;
+}
+
+@media screen and (min-width: 55em) {
+	.content__title {
+		font-size: 8vw;
+	}
+	.content__date,
+	.content__location {
+		font-size: 1rem;
+	}
+	.menu-trigger {
+		display: inline-block;
+		background: none;
+		border: 0;
+		grid-area: menu;
+		justify-self: start;
+		align-self: end;
+		cursor: pointer;
+		pointer-events: auto;
+		font-family: inherit;
+		color: inherit;
+		position: relative;
+		padding: 0;
+		white-space: nowrap;
+	}
+
+	.menu-trigger--close {
+		align-self: center;
+	}
+	
+	.grim {
+		display: grid;
+		position: fixed;
+		z-index: 1000;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		grid-template-columns: repeat(32,3.125vw);
+		grid-template-rows: repeat(32,3.125vh);
+		pointer-events: none;
+	}
+
+	.grim--open {
+		pointer-events: auto;
+	}
+
+	.grim__item {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.grim__item:first-child {
+		grid-area: 31 / 1 / 33 / 2;
+	}
+
+	.grim__item:nth-child(2) {
+		grid-area: 31 / 2 / 33 / 3;
+	}
+
+	.grim__item:nth-child(3) {
+		grid-area: 29 / 1 / 31 / 3;
+	}
+
+	.grim__item:nth-child(4) {
+		grid-area: 29 / 3 / 33 / 5;
+	}
+
+	.grim__item:nth-child(5) {
+		grid-area: 25 / 1 / 29 / 5;
+	}
+
+	.grim__item:nth-child(6) {
+		grid-area: 25 / 5 / 33 / 9;
+	}
+
+	.grim__item:nth-child(7) {
+		grid-area: 17 / 1 / 25 / 9;
+	}
+
+	.grim__item:nth-child(8) {
+		grid-area: 17 / 9 / 33 / 17;
+	}
+
+	.grim__item:nth-child(9) {
+		grid-area: 1 / 1 / 17 / 17;
+	}
+
+	.grim__item:nth-child(10) {
+		grid-area: 1 / 17 / 33 / 33;
+	}
+
+	.grim__item-bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transform: scale3d(0,0,1);
+		opacity: 0;
+		box-shadow: 0 0 0 2px currentColor;
+		background: currentColor;
+	}
+
+	.grim__item-bg--1 { color: #F8D05D; }
+	.grim__item-bg--2 { color: #da3b35; }
+	.grim__item-bg--3 { color: #302d29; }
+	.grim__item-bg--4 { color: #4600f2; }
+	.grim__item-bg--5 { color: #f8d15b; }
+	.grim__item-bg--6 { color: #4CAF50; }
+	.grim__item-bg--7 { color: #1bdde6; }
+	.grim__item-bg--8 { color: #da3b35; }
+	.grim__item-bg--9 { color: #4600f1; }
+	.grim__item-bg--10 { color: #F8D05D; }
+
+	.grim__item-content {
+		position: relative;
+		color: #fff;
+		transition: color 0.3s;
+		overflow: hidden;
+	}
+
+	.grim__item-content:hover,
+	.grim__item-content:focus {
+		opacity: 0.8;
+		color: inherit;
+		transition: opacity 0.3s;
+	}
+
+	.grim__item-inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		position: relative;
+		opacity: 0;
+	}
+
+	.grim__item-title {
+		font-weight: normal;
+		margin: 0;
+		font-size: 1.85rem;
+		letter-spacing: 0.15rem;
+	}
+
+	.grim__item:nth-child(6) .grim__item-title {
+		font-size: 2rem;
+	}
+
+	.grim__item:nth-child(7) .grim__item-title {
+		font-size: 2.25rem;
+	}
+
+	.grim__item:nth-child(8) .grim__item-title {
+		font-size: 2.45rem;
+	}
+
+	.grim__item:nth-child(9) .grim__item-title {
+		font-size: 2.65rem;
+	}
+
+	.grim__item:nth-child(10) .grim__item-title {
+		font-size: 3.85rem;
+	}
+
+	.grim__item-desc {
+		font-size: 0.85rem;
+		margin: 0.5rem 0 0 0;
+	}
+
+	.grim__item-desc::after {
+		content: '...';
+		position: relative;
+		display: block;
+		font-size: 1.75rem;
+	}
+}
