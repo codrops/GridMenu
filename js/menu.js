@@ -126,22 +126,19 @@
 			}
 		}
 		openBoxes(pos = 0) {
-			if ( pos >= this.itemsTotal ) {
-				this.isAnimating = false;
-				return;
-			};
-			DOM.grim.classList.add('grim--open');
-			const box = this.boxes[pos];
-			box.open().then(() => this.openBoxes(pos+1));
+			this.toggleBoxes('open', pos);
 		}
 		closeBoxes(pos = 0) {
+			this.toggleBoxes('close', pos);
+		}
+		toggleBoxes(action, pos) {
 			if ( pos >= this.itemsTotal ) {
 				this.isAnimating = false;
 				return;
 			};
-			DOM.grim.classList.remove('grim--open');
+			DOM.grim.classList[action === 'open' ? 'add' : 'remove']('grim--open');
 			const box = this.boxes[pos];
-			box.close().then(() => this.closeBoxes(pos+1));
+			box[action === 'open' ? 'open' : 'close']().then(() => this[action === 'open' ? 'openBoxes' : 'closeBoxes'](pos+1));
 		}
 	}
 
